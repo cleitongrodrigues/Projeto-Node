@@ -1,6 +1,9 @@
 const express = require('express');
+const router = require("./routers/index");
 const app = express();
-const porta = 3000
+const porta = 3000;
+
+router(app);
 
 app.listen(porta, (error) => {
     if (error) {
