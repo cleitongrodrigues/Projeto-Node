@@ -43,6 +43,19 @@ class AtendimentoModel {
             } )  
         })
     }
+    apagar(id){
+        const sql = `delete from atendimento where id_Atendimentos = ?`
+        return new Promise ((resolve, reject) => {
+            conexao.query(sql, [id], (error, resposta) => {
+                if (error){
+                    console.log("Erro ao apagar um novo atendimento.")
+                    reject(error);
+                }
+                console.log("Atendimento apagadp com sucesso!")
+                resolve(resposta);
+            } )  
+        })
+    }
 }
 
 module.exports = new AtendimentoModel();

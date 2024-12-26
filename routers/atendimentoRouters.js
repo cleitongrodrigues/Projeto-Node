@@ -48,9 +48,15 @@ router.put("/atendimento/:id", (req, res) => {
 });
 
 router.delete("/atendimento/:id", (req, res) => {
-    const resposta = atendimentoController.apagar(id);
-    const id = req.params;
-    res.send(resposta);
+    const {id} = req.params;
+    const atendimento = atendimentoController.apagar(id);
+    atendimento
+        .then((resultAtendimentoApagado) => {
+            res.status(200).json(resultAtendimentoApagado);
+        }) 
+        .catch(error => {
+            res.status(400).json({message : error.message});
+        })
 });
 
 module.exports = router;

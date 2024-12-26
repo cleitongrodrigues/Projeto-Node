@@ -11,7 +11,7 @@ class AtendimentoControler{
         return atendimentoModel.atualizar(atendimentoAtualizado, id);
     }
     apagar(id){
-        return `Atencimento ${id} apagado com sucesso!`;
+        return atendimentoModel.apagar(id);
     }
 };
 
