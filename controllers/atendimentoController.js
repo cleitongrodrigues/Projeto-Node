@@ -1,12 +1,14 @@
+const atendimentoModel = require("../models/atendimentoModel");
+
 class AtendimentoControler{
     buscar(){
-        return "Buscando atendimentos...";
+        return atendimentoModel.listar();
     }
-    criar(){
-        return "Atendimento criado!";
+    criar(novoAtendimento){
+        return atendimentoModel.criar(novoAtendimento);
     }
-    atualizar(id){
-        return `Atendimento ${id} atualizado!`;
+    atualizar(atendimentoAtualizado, id){
+        return atendimentoModel.atualizar(atendimentoAtualizado, id);
     }
     apagar(id){
         return `Atencimento ${id} apagado com sucesso!`;
