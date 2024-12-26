@@ -1,11 +1,17 @@
 const mysql = require('mysql2');
 
+const bd_servidor = 'localhost';
+const bd_porta = 3306;
+const bd_usuario = 'root';
+const bd_senha = 'root';
+const bd_banco = 'controle_atendimento';
+
 const conexao = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "root",
-    database: "controle_atendimento"
+    host: bd_servidor,
+    port: bd_porta,
+    user: bd_usuario,
+    password: bd_senha,
+    database: bd_banco
 });
 conexao.connect((error) => {
     if (error) {
